@@ -1,0 +1,13 @@
+<h1 >Create A New Account</h1>
+<%= form_with(model: @user, local: true, url: '/signup', method: :post) do |f| %>
+  <%= render 'shared/errors', instance: @user %>
+  <div>
+    <%= f.text_field :username, placeholder: "username"%>
+  </div>
+
+  <div>
+    <%= f.password_field :password, placeholder: "password"%>
+  </div>
+
+  <%= f.submit "Sign Up" %>
+<% end %>
