@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <nav style="text-align: right">
+      <% if signed_in? %>
+        <%= link_to "sign out!", signout_path, method: :delete %>
+      <% else %>
+        <a href="/signup">sign up!</a>
+        <a href="/signin">sign in!</a>
+      <% end %>
+    </nav>
     <%= yield %>
   </body>
 </html>
